@@ -7,9 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { TabsPageRoutingModule } from './tabs.router.module';
 
 import { TabsPage } from './tabs.page';
-import { ContactPageModule } from '../contact/contact.module';
-import { AboutPageModule } from '../about/about.module';
-import { HomePageModule } from '../home/home.module';
+import { MovementPageModule } from '../movement/movement.module';
+import { StatePageModule } from '../state/state.module';
 
 @NgModule({
   imports: [
@@ -17,9 +16,8 @@ import { HomePageModule } from '../home/home.module';
     CommonModule,
     FormsModule,
     TabsPageRoutingModule,
-    HomePageModule,
-    AboutPageModule,
-    ContactPageModule
+    MovementPageModule,
+    StatePageModule
   ],
   declarations: [TabsPage]
 })
