@@ -1,11 +1,6 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Movement</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-header [title]="title"></app-header>
 <app-amount padding></app-amount>
-
 <ion-content padding>
   <app-movements-list [movements]="movements"></app-movements-list>
 </ion-content>
+<app-floating-button></app-floating-button>

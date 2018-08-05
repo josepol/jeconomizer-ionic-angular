@@ -9,6 +9,7 @@ import { MovementModel } from './models/movement.model';
 })
 export class MovementPage implements OnInit {
 
+  public title: string = 'Movement';
   public movements: Array<MovementModel>;
 
   constructor(
@@ -17,7 +18,7 @@ export class MovementPage implements OnInit {
 
   ngOnInit() {
     this.getMovements();
-  }
+  }6
 
   private getMovements() {
     this.movementService.getMovements().subscribe(movements => this.movements = movements);

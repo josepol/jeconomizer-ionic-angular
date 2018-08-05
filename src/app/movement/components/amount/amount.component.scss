@@ -1,15 +1,17 @@
+@import "../../../../theme/variables";
+
 .app-amount {
 
     .amount-benefit {
-        color: green;
+        color: $green();
     }
 
     .amount-expense {
-        color: $red-color;
+        color: $red;
     }
 
     .amount-balance {
-        color: yellow;
+        color: $yellow;
     }
 
 }

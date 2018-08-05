@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatePage implements OnInit {
 
+  public title: string = 'State';
+
   constructor() { }
 
   ngOnInit() {
