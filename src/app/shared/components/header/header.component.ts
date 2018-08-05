@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +9,17 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   @Input() title: string;
+  @Input() isSubPage: boolean;
 
-  constructor() { }
+  constructor(
+    private location: Location
+  ) { }
 
   ngOnInit() {
+  }
+
+  public goBack() {
+    this.location.back();
   }
 
 }
