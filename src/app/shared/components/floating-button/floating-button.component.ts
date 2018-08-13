@@ -16,7 +16,7 @@ export class FloatingButtonComponent implements OnInit {
   }
 
   public addMovement() {
-    this.router.navigate(['add-movement']);
+    this.router.navigateByUrl('add/(movement:movement)');
   }
 
 }
