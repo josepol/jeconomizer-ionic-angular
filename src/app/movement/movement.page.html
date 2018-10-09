@@ -3,4 +3,4 @@
 <ion-content padding>
   <app-movements-list [movements]="movements"></app-movements-list>
 </ion-content>
-<app-floating-button></app-floating-button>
+<app-floating-button (emitExecuted)="onFloatingButtonClicked($event)"></app-floating-button>

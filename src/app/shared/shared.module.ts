@@ -1,11 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
 import { FloatingButtonComponent } from './components/floating-button/floating-button.component';
 import { HeaderComponent } from './components/header/header.component';
+import { NavigationService } from './services/navigation/navigation.service';
+import { SimpleHeaderComponent } from './components/simple-header/simple-header.component';
+import { HttpService } from './services/http/http.service';
 
 @NgModule({
   imports: [
@@ -15,11 +16,13 @@ import { HeaderComponent } from './components/header/header.component';
   ],
   declarations: [
     FloatingButtonComponent,
-    HeaderComponent
+    HeaderComponent,
+    SimpleHeaderComponent
   ],
   exports: [
     FloatingButtonComponent,
-    HeaderComponent
+    HeaderComponent,
+    SimpleHeaderComponent
   ]
 })
 export class SharedPageModule {
@@ -27,6 +30,8 @@ export class SharedPageModule {
     return {
         ngModule: SharedPageModule,
         providers: [
+          NavigationService,
+          HttpService
         ]
     };
 }

@@ -9,11 +9,16 @@ import { MovementCardComponent } from './components/movement-card/movement-card.
 import { MovementsListComponent } from './components/movements-list/movements-list.component';
 import { AmountComponent } from './components/amount/amount.component';
 import { SharedPageModule } from '../shared/shared.module';
+import { CreateMovementComponent } from './containers/create-movement/create-movement.component';
 
 const routes: Routes = [
   {
     path: '',
     component: MovementPage
+  },
+  {
+    path: 'create-movement',
+    component: CreateMovementComponent
   }
 ];
 
@@ -29,10 +34,12 @@ const routes: Routes = [
     MovementPage,
     MovementsListComponent,
     MovementCardComponent,
-    AmountComponent
+    AmountComponent,
+    CreateMovementComponent
   ],
   providers: [
     MovementService
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class MovementPageModule {}

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MovementService } from './services/movement/movement.service';
 import { MovementModel } from './models/movement.model';
+import { NavigationService } from '../shared/services/navigation/navigation.service';
+import { CONSTANT } from '../shared/utils/constants';
 
 @Component({
   selector: 'app-movement',
@@ -13,15 +15,20 @@ export class MovementPage implements OnInit {
   public movements: Array<MovementModel>;
 
   constructor(
-    private movementService: MovementService
+    private movementService: MovementService,
+    private navigationService: NavigationService
   ) { }
 
   ngOnInit() {
     this.getMovements();
-  }6
+  }
 
   private getMovements() {
     this.movementService.getMovements().subscribe(movements => this.movements = movements);
+  }
+
+  onFloatingButtonClicked() {
+    this.navigationService.navigate(CONSTANT.NAV.ADD_MOVEMENT);
   }
 
 }

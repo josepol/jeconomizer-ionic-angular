@@ -1,18 +1,30 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar *ngIf="!isSearchBarVisible; else searchBar">
     <ion-buttons slot="secondary">
-        <ion-button>
-          <ion-icon slot="icon-only" name="contact"></ion-icon>
-        </ion-button>
-        <ion-button>
+      <ion-button (click)="navigateProfile()">
+        <ion-icon slot="icon-only" name="contact"></ion-icon>
+      </ion-button>
+      <ion-button (click)="displaySearchBar(true)">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon name="calendar"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+  <ng-template #searchBar>
+    <ion-toolbar>
+      <ion-item class="search-input">
+        <ion-input (blur)="displaySearchBar(false)"></ion-input>
+      </ion-item>
+      <ion-buttons slot="primary">
+        <ion-button (click)="displaySearchBar()">
           <ion-icon slot="icon-only" name="search"></ion-icon>
         </ion-button>
       </ion-buttons>
-      <ion-buttons slot="primary">
-        <ion-button>
-          <ion-icon name="calendar"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-      <ion-title>{{ title }}</ion-title>
-  </ion-toolbar>
+    </ion-toolbar>
+  </ng-template>
 </ion-header>

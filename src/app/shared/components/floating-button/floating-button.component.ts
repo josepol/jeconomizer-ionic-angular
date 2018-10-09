@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-floating-button',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FloatingButtonComponent implements OnInit {
 
+  @Output() emitExecuted: EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  execute() {
+    this.emitExecuted.emit();
   }
 
 }

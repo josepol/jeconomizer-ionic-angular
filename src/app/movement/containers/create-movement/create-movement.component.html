@@ -1,0 +1,25 @@
+<app-simple-header (emitGoBack)="onEmitGoBack($event)"></app-simple-header>
+<ion-content padding>
+  <ion-card-content>
+      <ion-card padding>
+          <ion-card-title text-center class="card-title">CREATE MOVEMENT</ion-card-title>
+          <ion-list>
+            <ion-item margin>
+              <ion-label>Description</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+            <ion-item margin>
+              <ion-label>Amount</ion-label>
+              <ion-input type="number"></ion-input>
+            </ion-item>
+            <ion-item margin>
+              <ion-label>Category</ion-label>
+              <ion-select [(ngModel)]="x">
+                <ion-option value="f">Female</ion-option>
+                <ion-option value="m">Male</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+      </ion-card>
+  </ion-card-content>
+</ion-content>

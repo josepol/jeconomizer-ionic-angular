@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment';
-import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
+import { HttpService } from '../../../shared/services/http/http.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +9,10 @@ import { Observable } from 'rxjs';
 export class MovementService {
 
   constructor(
-    private http: HttpClient
+    private httpService: HttpService
   ) { }
 
   public getMovements(): Observable<any> {
-    return this.http.get(`${environment.api_path}/assets/mocks/movements.json`);
+    return this.httpService.get(`${environment.api_path}/assets/mocks/movements.json`);
   }
 }
